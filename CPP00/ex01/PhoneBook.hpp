@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:23:18 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/21 21:17:12 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/21 21:59:55 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ std::string scan_nickname();
 std::string scan_phone();
 std::string scan_dsecret();
 std::string replace_str(std::string str);
+void display(int index, Contact c);
 
 class PhoneBook
 {
@@ -49,47 +50,26 @@ class PhoneBook
 		{
 			setContact(Contact(fn, ln, nick, pn, ds));
 		}
-
-		private : 
-			void display()
-		{
-			int j;
-
-			j = 0;
-
-			while (j < i)
-			{
-				std::cout << std::setw(10) << std::right << j;
-				std::cout << "|";
-				std::cout << std::setw(10) << std::right << replace_str(contact[j].getfname()) ;
-				std::cout << "|";
-				std::cout << std::setw(10) << std::right << replace_str(contact[j].getlname());
-				std::cout << "|";
-				std::cout << std::setw(10) << std::right << replace_str(contact[j].getnickname());
-				std::cout << std::endl;
-				j++;
-			}
-		}
+			
 		public :
-			void serch()
+		void serch()
 		{
 			int index;
+			int j;
 			
-			display();
+			j = 0;
+			while (j < i)
+			{
+				display(j, contact[j]);
+				j ++;
+			}
 			while (index >= i || index < 0)
 			{
 				std::cout << "which index : ";
 				std::cin >> index;
 				std::cin.ignore();
 			}
-			std::cout << std::setw(10) << std::right << index;
-			std::cout << "|";
-			std::cout << std::setw(10) << std::right << replace_str(contact[index].getfname()) ;
-			std::cout << "|";
-			std::cout << std::setw(10) << std::right << replace_str(contact[index].getlname());
-			std::cout << "|";
-			std::cout << std::setw(10) << std::right << replace_str(contact[index].getnickname());
-			std::cout << std::endl;
+			display(index, contact[index]);
 			
 		}
 };
