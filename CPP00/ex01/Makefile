@@ -1,9 +1,9 @@
 NAME = Contacts
 
-CXX = c++
+CXX = c++ -std=c++98
 
-CPPFLAGS = -Wall -Wextra -Werror 
-
+CPPFLAGS = -Wall -Wextra -Werror  -fsanitize=address
+ 
 FILES = main.cpp utils.cpp utils01.cpp
 
 OBJCS = $(FILES:.cpp=.o)

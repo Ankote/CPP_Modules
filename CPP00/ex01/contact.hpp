@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 08:23:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/21 20:49:32 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/22 12:08:17 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ class Contact
 	public :
 		Contact (){}
 	
-		Contact(std::string lsn,std::string fsn, std::string nkn, std::string pn, std::string dsecr)
+		Contact(std::string fsn, std::string lsn, std::string nkn,
+					std::string pn, std::string dsecr)
 		{
-			this->last_name = lsn;
 			this->first_name = fsn;
+			this->last_name = lsn;
 			this->nickname = nkn;
 			this->phone_num = pn;
 			this->darkest_secret = dsecr;

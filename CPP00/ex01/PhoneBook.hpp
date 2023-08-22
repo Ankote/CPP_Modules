@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:23:18 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/21 21:59:55 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/22 11:30:42 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class PhoneBook
 {
     private :
         Contact contact[8];
-		int i = 0;
+		int i;
 	
 	public :
 		void setContact(Contact c)
@@ -46,32 +46,9 @@ class PhoneBook
 			return contact[i];
 		}
 
-		void add_contact(std::string fn, std::string ln, std::string nick, std::string  pn, std::string ds)
-		{
-			setContact(Contact(fn, ln, nick, pn, ds));
-		}
-			
-		public :
-		void serch()
-		{
-			int index;
-			int j;
-			
-			j = 0;
-			while (j < i)
-			{
-				display(j, contact[j]);
-				j ++;
-			}
-			while (index >= i || index < 0)
-			{
-				std::cout << "which index : ";
-				std::cin >> index;
-				std::cin.ignore();
-			}
-			display(index, contact[index]);
-			
-		}
+		void add_contact(std::string fn, std::string ln, std::string nick, std::string  pn, std::string ds);
+		void serch();
+	
 };
 
 # endif
