@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 08:40:28 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/22 11:32:44 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/22 21:19:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,20 @@ void PhoneBook::add_contact(std::string fn, std::string ln,
     setContact(Contact(fn, ln, nick, pn, ds));
 }
 
-
-void PhoneBook::serch()
+int isnumber(std::string index)
 {
-    int index;
-    int j;
+    int i;
     
-    j = 0;
-    while (j < i)
+    i = 0;
+    while (index[i])
     {
-        display(j, contact[j]);
-        j ++;
+        if (!isdigit(index[i]))
+            return (-1);
+        i ++;
     }
-    while (index >= i || index < 0)
-    {
-        std::cout << "which index : ";
-        std::cin >> index;
-        std::cin.ignore();
-        if (index >= i || index < 0)
-            std::cout << "invalid index!! Try again\n";
-    }
-    display(index, contact[index]);
+    if (atoi(index.c_str()) < 0 || atoi(index.c_str()) > std::numeric_limits<int>::max())
+        return (-1);
+    return (atoi(index.c_str()));
 }
 	
 void display(int index, Contact c)
@@ -52,3 +45,28 @@ void display(int index, Contact c)
     std::cout << std::setw(10) << std::right << replace_str(c.getnickname());
     std::cout << std::endl;
 }
+
+void PhoneBook::serch()
+{
+    int j;
+    std::string index;
+    
+    j = 0;
+    while (j < i)
+    {
+        display(j, contact[j]);
+        j ++;
+    }
+    while (1)
+    {
+        std::cout << "which index : ";
+        getline(std::cin, index);std::string str;
+
+        if (isnumber(index) < 0 || atoi(index.c_str()) >= i)
+            std::cout << "invalid index!! Try again\n";
+        else 
+            break;
+    }
+    display(isnumber(index), contact[isnumber(index)]);
+}
+

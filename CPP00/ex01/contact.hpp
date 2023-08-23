@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 08:23:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/22 12:08:17 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/23 09:49:51 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,67 +24,30 @@ class Contact
         std::string phone_num;
         std::string	darkest_secret;
 	public :
-		Contact (){}
+		Contact ();
 	
 		Contact(std::string fsn, std::string lsn, std::string nkn,
-					std::string pn, std::string dsecr)
-		{
-			this->first_name = fsn;
-			this->last_name = lsn;
-			this->nickname = nkn;
-			this->phone_num = pn;
-			this->darkest_secret = dsecr;
-		}
+					std::string pn, std::string dsecr);
 		
-		void setlname(std::string value)
-		{
-			last_name = value;
-		}
+		void setlname(std::string value);
+
+		void setfname(std::string value);
+
+		void setnickname(std::string value);
+
+		void setphone(std::string  value);
+
+		void setdsecret(std::string value);
+
+		std::string getlname();
 		
-		void setfname(std::string value)
-		{
-			first_name = value;
-		}
-		
-		void setnickname(std::string value)
-		{
-			nickname = value;
-		}
+		std::string getfname();
 
-		void setphone(std::string  value)
-		{
-			phone_num = value;
-		}
-		
-		void setdsecret(std::string value)
-		{
-			darkest_secret = value;
-		}
-		
-		std::string getlname()
-		{
-			return(last_name);	
-		}
+		std::string getnickname();
 
-		std::string getfname()
-		{
-			return(first_name);	
-		}
+		std::string getname();
 
-		std::string getnickname()
-		{
-			return(nickname);	
-		}
-
-		std::string getname()
-		{
-			return(phone_num);	
-		}
-
-		std::string getscret()
-		{
-			return(darkest_secret);	
-		}
+		std::string getscret();
 };
 
 # endif
