@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:53:49 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/23 18:14:18 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/23 20:59:00 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,58 +14,56 @@
 #include <ctime>
 #include <iostream>
 
-Acount::Account( int initial_deposit )
-{
-       _accountIndex = getNbAccounts();
-       _nbAccounts ++;
-       _nbAccounts ++;
-       _amount = initial_deposit;
-       _totalAmount += _amount;
 
-        std::time_t currentTime = std::time(nullptr);
+Account::Account( int initial_deposit )
+{
+        this->_accountIndex = getNbAccounts();
+        this->_nbAccounts ++;
+        this->_nbAccounts ++;
+        this->_amount = initial_deposit;
+        this->_totalAmount += initial_deposit;
+        char formattedTime[9];
+
+        std::time_t currentTime = std::time(NULL);
         std::tm* timeInfo = std::localtime(&currentTime);
         std::strftime(formattedTime, sizeof(formattedTime), "%Y%d%m", timeInfo);
         std::cout << "["<< std::cout << formattedTime << "]";
 }
 
-void	Acount::makeDeposit( int deposit )
+void	Account::makeDeposit( int deposit )
 {
     _totalNbDeposits ++;
     _nbDeposits ++;
     _amount += deposit; 
 }
 
-bool	Acount::makeWithdrawal( int withdrawal )
+bool	Account::makeWithdrawal( int withdrawal )
 {
-    
+    (void)withdrawal;
     return (1);
 }
 
-static int	Account::getNbAccounts( void )
+int	Account::getNbAccounts( void )
 {
     return (_nbAccounts);
 }
-static int	Account::getTotalAmount( void )
+int	Account::getTotalAmount( void )
 {
     return (_totalAmount);
 }
 
-static int	Account::getNbDeposits( void )
+int	Account::getNbDeposits( void )
 {
     return (_nbDeposits);
 }
 
-static int	Account::getNbWithdrawals( void );
+int	Account::getNbWithdrawals( void );
 {
     return (_nbWithdrawals);
 }
 
-Account( int initial_deposit )
-{
-    initial_deposit = 0;
-}
 
 int main()
 {
-    Acount ac(1);
+    Account ac(1);
 }
