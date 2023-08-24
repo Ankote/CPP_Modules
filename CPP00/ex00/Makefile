@@ -6,14 +6,14 @@
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 12:18:21 by aankote           #+#    #+#              #
-#    Updated: 2023/08/16 14:33:57 by aankote          ###   ########.fr        #
+#    Updated: 2023/08/24 12:16:13 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = Megaphone
 
-CXX = clang++
+CXX = c++
 
 CPPFLAGS = -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 18:00:41 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/23 21:00:03 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/24 19:43:30 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Account {
 
 		static int	getNbAccounts( void );
 		static int	getTotalAmount( void );
-		static int		getNbDeposits( void );
+		static int	getNbDeposits( void );
 		static int	getNbWithdrawals( void );
 		static void	displayAccountsInfos( void );
 
