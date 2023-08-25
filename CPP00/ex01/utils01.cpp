@@ -6,16 +6,18 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 08:40:28 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/22 21:19:02 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 21:19:55 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void PhoneBook::add_contact(std::string fn, std::string ln,
-                std::string nick, std::string  pn, std::string ds)
+void instractions()
 {
-    setContact(Contact(fn, ln, nick, pn, ds));
+    std::cout << "\tInvalid commande!! you've to chose : \n";
+    std::cout << "\t  ADD    : add a new contact.\n";
+    std::cout << "\t  SEARCH : search for a contact with its index\n";
+    std::cout << "\t  EXIT   : Exit the programme\n";
 }
 
 int isnumber(std::string index)
@@ -46,27 +48,16 @@ void display(int index, Contact c)
     std::cout << std::endl;
 }
 
-void PhoneBook::serch()
+void contactInfos(Contact c)
 {
-    int j;
-    std::string index;
-    
-    j = 0;
-    while (j < i)
-    {
-        display(j, contact[j]);
-        j ++;
-    }
-    while (1)
-    {
-        std::cout << "which index : ";
-        getline(std::cin, index);std::string str;
-
-        if (isnumber(index) < 0 || atoi(index.c_str()) >= i)
-            std::cout << "invalid index!! Try again\n";
-        else 
-            break;
-    }
-    display(isnumber(index), contact[isnumber(index)]);
+    std::cout << "__________________________________";
+    std::cout << std::endl << std::endl;
+    std::cout << "    First Name   : " << c.getfname() << std::endl; 
+    std::cout << "    Last Name    : " << c.getlname() << std::endl;;
+    std::cout << "    Nickname     : " << c.getnickname() << std::endl;
+    std::cout << "    Phone Number : " << c.getphone() << std::endl;
+    std::cout << "    Dark secret  : " << c.getscret() << std::endl;
+    std::cout << "___________________________________";
+    std::cout << std::endl << std::endl;
 }
 

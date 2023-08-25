@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:23:18 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/23 09:51:34 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 21:27:09 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,18 @@ std::string scan_nickname();
 std::string scan_phone();
 std::string scan_dsecret();
 std::string replace_str(std::string str);
-void display(int index, Contact c);
+void 		display(int index, Contact c);
+int			isnumber(std::string index);
+void 		display(int index, Contact c);
+void 		contactInfos(Contact c);
+void 		instractions();
 
 class PhoneBook
 {
     private :
         Contact contact[8];
 		int i;
+		int k;
 	
 	public :
 		PhoneBook();

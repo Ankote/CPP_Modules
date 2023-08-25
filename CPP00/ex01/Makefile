@@ -4,11 +4,11 @@ CXX = c++ -std=c++98
 
 CPPFLAGS = -Wall -Wextra -Werror  -fsanitize=address -g3
  
-FILES = main.cpp utils.cpp utils01.cpp utils02.cpp contact_utils.cpp
+FILES = main.cpp scan_args.cpp utils01.cpp PhoneBook.cpp contact_utils.cpp
 
 OBJCS = $(FILES:.cpp=.o)
 
-all : $(NAME);
+all : $(NAME)
 
 $(NAME) : $(OBJCS)
 		@$(CXX) $(CPPFLAGS) $(OBJCS) -o $(NAME)

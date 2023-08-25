@@ -6,30 +6,34 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:43:48 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/24 12:20:51 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:35:16 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int argc, char **argv)
+void strupper(std::string str)
 {
     int i;
-    int j;
+    i = 0;
+    while (str[i])
+    {
+        str[i] = std::toupper(str[i]);
+        std::cout << str[i];
+        i++;
+    }
+}
+
+int main(int argc, char **argv)
+{
+    int i; 
     
     i = 1;
     if (argc == 1)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     while (i < argc)
     {
-        j = 0;
-        while (argv[i][j])
-        {
-            argv[i][j] = std::toupper(argv[i][j]);
-            j++;
-        }
-        std::cout << argv[i];
-        
+        strupper(argv[i]);
         i++;
     }
     return (0);

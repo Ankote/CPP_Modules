@@ -4,7 +4,7 @@ CXX = c++ -std=c++98
 
 CPPFLAGS = -Wall -Wextra -Werror
 
-FILES = Acount.cpp
+FILES = Acount.cpp tests.cpp
 
 OBJCS = $(FILES:.cpp=.o)
 

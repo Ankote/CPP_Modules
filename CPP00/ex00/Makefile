@@ -6,12 +6,12 @@
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 12:18:21 by aankote           #+#    #+#              #
-#    Updated: 2023/08/24 12:16:13 by aankote          ###   ########.fr        #
+#    Updated: 2023/08/25 16:12:53 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Megaphone
+NAME = megaphone
 
 CXX = c++
 

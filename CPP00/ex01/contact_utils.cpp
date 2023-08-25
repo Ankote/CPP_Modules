@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 19:35:00 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/23 09:44:23 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 21:09:55 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ std::string Contact::getnickname()
     return(nickname);	
 }
 
-std::string Contact::getname()
+std::string Contact::getphone()
 {
     return(phone_num);	
 }

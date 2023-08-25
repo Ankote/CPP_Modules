@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 16:46:51 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/22 11:45:35 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 16:48:58 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 #include <string>
 #include <cctype>
 
-
-void instractions()
-{
-    std::cout << "\tInvalid commande!! you've to chose : \n";
-    std::cout << "\t  ADD    : add a new contact.\n";
-    std::cout << "\t  SEARCH : search for a contact with its index\n";
-    std::cout << "\t  EXIT   : Exit the programme\n";
-}
 int main()
 {
     std::string commande;

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   scan_args.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:24:08 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/21 22:07:30 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/25 16:46:26 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
 
 std::string	scan_fname()
 {
@@ -68,7 +68,8 @@ int 		check_phonenum(std::string value)
 	i = 0;
 	while(value[i])
 	{
-		if ((!isdigit (value[i]) && value[i] != '+') ||  (value[i] == '+'  && i != 0))
+		if ((!isdigit (value[i]) && value[i] != '+') 
+			||  (value[i] == '+'  && i != 0))
 		{
 				return (0);
 		}
