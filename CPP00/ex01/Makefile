@@ -1,10 +1,10 @@
 NAME = Contacts
 
-CXX = c++ -std=c++98
+CXX = g++ -std=c++98
 
 CPPFLAGS = -Wall -Wextra -Werror  -fsanitize=address -g3
  
-FILES = main.cpp scan_args.cpp utils01.cpp PhoneBook.cpp contact_utils.cpp
+FILES = main.cpp scan_args.cpp utils01.cpp PhoneBook.cpp Contact.cpp
 
 OBJCS = $(FILES:.cpp=.o)
 
@@ -20,6 +20,6 @@ clean :
 fclean : clean
 	rm -fr $(NAME)
 
-re : fclean all
+re : fclean allcontact_utils.cpp
 
 

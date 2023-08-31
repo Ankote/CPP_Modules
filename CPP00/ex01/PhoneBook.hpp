@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:23:18 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/25 21:27:09 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/26 08:07:49 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void 		display(int index, Contact c);
 int			isnumber(std::string index);
 void 		display(int index, Contact c);
 void 		contactInfos(Contact c);
+int 		check_phonenum(std::string value);
 void 		instractions();
 
 class PhoneBook

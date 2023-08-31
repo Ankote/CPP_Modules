@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:24:08 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/25 16:46:26 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/26 08:07:36 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,6 @@ std::string scan_nickname()
 			break;
 	}
 	return (nickname);
-}
-
-int 		check_phonenum(std::string value)
-{
-	int i;
-
-	i = 0;
-	while(value[i])
-	{
-		if ((!isdigit (value[i]) && value[i] != '+') 
-			||  (value[i] == '+'  && i != 0))
-		{
-				return (0);
-		}
-		if(value[i] == '+')
-		{
-			while (value[i] && value[i] == '+')
-				i ++;
-			if ((value[i] < '0' || value[i] > '9'))
-				return (0);
-		}
-		i ++;
-	} 
-	return (1);
 }
 
 std::string	scan_phone()

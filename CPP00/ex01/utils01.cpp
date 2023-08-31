@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 08:40:28 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/25 21:19:55 by aankote          ###   ########.fr       */
+/*   Updated: 2023/08/26 08:07:42 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,26 @@ void contactInfos(Contact c)
     std::cout << std::endl << std::endl;
 }
 
+int 		check_phonenum(std::string value)
+{
+	int i;
+
+	i = 0;
+	while(value[i])
+	{
+		if ((!isdigit (value[i]) && value[i] != '+') 
+			||  (value[i] == '+'  && i != 0))
+		{
+				return (0);
+		}
+		if(value[i] == '+')
+		{
+			while (value[i] && value[i] == '+')
+				i ++;
+			if ((value[i] < '0' || value[i] > '9'))
+				return (0);
+		}
+		i ++;
+	} 
+	return (1);
+}
