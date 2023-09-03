@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 12:25:27 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/03 10:11:23 by aankote          ###   ########.fr       */
+/*   Created: 2023/09/01 15:15:44 by aankote           #+#    #+#             */
+/*   Updated: 2023/09/02 10:34:50 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie ()
-{}
-
-Zombie::Zombie(std::string name)
+int main( void ) 
 {
-   this->name = name;
-}
-
-void Zombie::announce (void)
-{
-   std::cout << this->name << " : Moar brainz" << std::endl;
-}
-
-Zombie::~Zombie ()
-{
-   
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }

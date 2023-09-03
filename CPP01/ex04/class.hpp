@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:07:07 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/31 20:40:43 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/02 21:44:24 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Generate_file
         bool checkFile();
 
         bool replace_file();
+
+        ~Generate_file();
 };
 
 # endif

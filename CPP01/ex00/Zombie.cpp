@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 09:02:32 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/26 09:19:14 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/02 11:43:56 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ void Zombie::announce()
 
 Zombie::~Zombie()
 {
-    std::cout << name << " : delited" << std::endl;
+    std::cout << name << " : Evaporated" << std::endl;
 }
-

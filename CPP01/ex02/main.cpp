@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:04:32 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/28 19:20:41 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/02 14:19:16 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 {
 	std::string message;
 	std::string *stringPTR;
-	std::string &stringREF =message;
+	std::string &stringREF = message;
 	
 	message = "HI THIS IS BRAIN";
 	stringPTR = &message;

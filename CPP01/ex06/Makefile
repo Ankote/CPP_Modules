@@ -6,7 +6,7 @@
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 08:39:27 by aankote           #+#    #+#              #
-#    Updated: 2023/09/01 09:24:51 by aankote          ###   ########.fr        #
+#    Updated: 2023/09/03 11:21:26 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,3 +34,4 @@ fclean: clean
 	rm -fr $(NAME)
 
 re: fclean all
+

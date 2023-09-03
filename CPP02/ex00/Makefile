@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/27 19:10:41 by aankote           #+#    #+#              #
-#    Updated: 2023/09/02 22:03:55 by aankote          ###   ########.fr        #
+#    Created: 2023/09/01 15:15:47 by aankote           #+#    #+#              #
+#    Updated: 2023/09/01 21:40:16 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fighting
+NAME = Fixed
 
-CXX = c++ -std=c++98
+CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror 
+CPPFLAGS = -Wall -Wextra -Werror
 
-FILES = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+FILES = main.cpp \
+		Fixed.cpp \
 
 OBJCS = $(FILES:.cpp=.o)
 
@@ -32,3 +33,5 @@ fclean : clean
 	rm -fr $(NAME)
 
 re : fclean all
+
+.PHONY : all re fclean clean

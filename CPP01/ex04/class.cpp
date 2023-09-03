@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:21:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/08/31 20:43:04 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/03 11:19:12 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,20 @@ bool GF::replace_file()
         while (pos != std::string::npos && pos < line.length())
         {
             line.erase(pos, this->origine.length());
-            replacedFile.append(line.insert(pos, this->coppy));
-            replacedFile.append("\n");
-            pos = line.find(this->origine, pos + this->origine.length());
+            line.insert(pos, this->coppy);
+            pos = line.find(this->origine, pos + this->coppy.length());
         }
         replacedFile.append(line);
         replacedFile.append("\n");
     }
-    outfileObj << replacedFile;
+    (outfileObj << replacedFile);
     return (1);
+}
+
+Generate_file::~Generate_file()
+{
+    if (this->infileObj.is_open())
+        this->infileObj.close();
+    if (this->outfileObj.is_open())   
+        this->outfileObj.close();
 }
