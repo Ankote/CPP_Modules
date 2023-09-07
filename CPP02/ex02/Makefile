@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/01 15:15:47 by aankote           #+#    #+#              #
-#    Updated: 2023/09/07 17:42:12 by aankote          ###   ########.fr        #
+#    Created: 2023/09/06 14:33:19 by aankote           #+#    #+#              #
+#    Updated: 2023/09/06 18:24:51 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,24 +14,21 @@ NAME = Fixed
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror
 
-FILES = main.cpp \
-		Fixed.cpp \
+FILES = main.cpp Fixed.cpp
 
-OBJCS = $(FILES:.cpp=.o)
+all: $(NAME)
 
-all : $(NAME)
+$(NAME):
+	$(CXX) $(CXXFLAGS) $(FILES) -o $(NAME)
 
-$(NAME) : $(OBJCS)
-	$(CXX) $(CPPFLAGS) $(OBJCS) -o $(NAME)
+clean:
+	rm -f $(NAME)
 
-clean :
-	rm -fr $(OBJCS)
-
-fclean : clean
+fclean: clean
 	rm -fr $(NAME)
 
-re : fclean all
+re: fclean all
 
-.PHONY : all re fclean clean
+.PHONY: all clean fclean re
