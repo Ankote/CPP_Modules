@@ -6,9 +6,12 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:48 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/06 18:48:57 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/08 21:07:27 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef _FIXED_HPP_
+#define _FIXED_HPP_
 
 #include <iostream>
 # include <math.h>
@@ -39,3 +42,5 @@ class Fixed
         
 };        
     std::ostream	&operator<<(std::ostream &o, const Fixed &a);
+
+#endif

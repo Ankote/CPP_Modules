@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:45 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/07 17:54:30 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/08 20:43:46 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
     } 
 
     Fixed::~Fixed()
-    {
+    {   
         std::cout << "Destructor called" << std::endl;
     }
     

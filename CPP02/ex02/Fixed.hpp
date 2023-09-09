@@ -6,51 +6,53 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/07 14:41:54 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/08 21:06:09 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _FIXED_HPP_
+#define _FEXED_HPP_
 #include <iostream>
 # include <cmath>
 
 class Fixed 
 {
     private :
-        int _fixed_Point_Value;
-        static const int _fractionalBits = 8;
+        int                 _fixed_Point_Value;
+        static const int    _fractionalBits = 8;
     public :
         Fixed ();
         /***********************ex01************************/
 
-        Fixed(const int value);
+        Fixed   (const int value);
 
-        Fixed(const float value);
+        Fixed   (const float value);
 
-        Fixed ( const Fixed &other);
+        Fixed   ( const Fixed &other);
 
-        Fixed &operator = (const Fixed &other);
+        Fixed   &operator = (const Fixed &other);
 
-        int getRawBits(void) const;
+        int     getRawBits(void) const;
         
-        void setRawBits(int const raw);
+        void    setRawBits(int const raw);
         
-        int toInt( void ) const;
+        int     toInt( void ) const;
 
-        float toFloat( void ) const;
+        float   toFloat( void ) const;
 
         /***************************************************/
         
-        Fixed &operator+(const Fixed &src);
-        Fixed &operator-(const Fixed &src);
-        Fixed &operator*(const Fixed &src);
-        Fixed &operator/(const Fixed &src);
+        Fixed   operator+(const Fixed &src);
+        Fixed   operator-(const Fixed &src);
+        Fixed   operator*(const Fixed &src);
+        Fixed   operator/(const Fixed &src);
         
-        bool operator<(const Fixed &src);
-        bool operator>(const Fixed &src);
-        bool operator<=(const Fixed &src);
-        bool operator>=(const Fixed &src);
-        bool operator==(const Fixed &src);
-        bool operator!=(const Fixed &src);
+        bool    operator<(const Fixed &src);
+        bool    operator>(const Fixed &src);
+        bool    operator<=(const Fixed &src);
+        bool    operator>=(const Fixed &src);
+        bool    operator==(const Fixed &src);
+        bool    operator!=(const Fixed &src);
         
 		Fixed	&operator++();
 		Fixed	operator++(int);
@@ -70,3 +72,5 @@ class Fixed
 };
 
 std::ostream	&operator<<(std::ostream &o, const Fixed &a);
+
+#endif
