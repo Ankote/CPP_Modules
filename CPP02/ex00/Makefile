@@ -6,7 +6,7 @@
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 15:15:47 by aankote           #+#    #+#              #
-#    Updated: 2023/09/07 17:42:12 by aankote          ###   ########.fr        #
+#    Updated: 2023/09/10 15:19:44 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Fixed
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = main.cpp \
 		Fixed.cpp \

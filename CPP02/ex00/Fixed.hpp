@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:15:42 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/08 21:08:29 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 15:19:08 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ class Fixed
         Fixed(void);
         
         Fixed(const Fixed &src);
-
-        ~Fixed(void);
         
         Fixed &operator=(const Fixed &rhs);
         
         int getRawBits(void) const;
         
         void setRawBits(int const raw);
+
+        ~Fixed(void);
 
 };
 

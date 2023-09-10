@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:02 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/10 14:58:25 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 16:50:03 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ Fixed::Fixed(const int value)
 
 Fixed::Fixed( const float value)
 {
-    this->_fixed_Point_Value = roundf(value * (pow(2, this->_fractionalBits
-    )));
+    this->_fixed_Point_Value = roundf(value * (pow(2, this->_fractionalBits)));
 }
 
 Fixed &Fixed::operator=(const Fixed &rhs)
@@ -156,24 +155,25 @@ Fixed Fixed::operator++(int) //Pos_inc
 }
 
 /**************************************MIN MAX*****************************************************/
+
 Fixed const &Fixed::min(const Fixed & a, const Fixed & b)  
 {
     return (a < b) ? a : b;
 }
 
-Fixed & min(Fixed &a, Fixed &b)
+Fixed & Fixed::min(Fixed &a, Fixed &b)
 {
         return (a < b) ? a : b;
 }
 
-Fixed const &Fixed::max(const Fixed& a, const Fixed& b) 
+Fixed const & Fixed::max(const Fixed& a, const Fixed& b) 
 {
     return (a < b) ? b : a;
 }
 
-Fixed & max(Fixed &a, Fixed &b)
+Fixed & Fixed::max(Fixed &a, Fixed &b)
 {
-        return (a.getRawBits() < b.getRawBits()) ? b : a;
+        return (a < b) ? b : a;
 }
 
 std::ostream	&operator<<(std::ostream &o, const Fixed &a)

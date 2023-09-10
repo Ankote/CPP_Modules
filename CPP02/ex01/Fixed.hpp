@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:48 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/08 21:07:27 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 15:16:17 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define _FIXED_HPP_
 
 #include <iostream>
-# include <math.h>
+# include <cmath>
 class Fixed
 {
     private :

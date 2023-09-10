@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:07:12 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/10 14:58:55 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 17:02:29 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static Fixed   abs(Fixed x) {
 
 static Fixed   area( Point const a, Point const b, Point const c ) {
     return ( ( ( a.getX() * ( b.getY() - c.getY() ) ) +
-             ( b.getX() * ( c.getY() - a.getY() ) ) +
-             ( c.getX() * ( a.getY() - b.getY() ) ) ) / 2 );
+               ( b.getX() * ( c.getY() - a.getY() ) ) +
+               ( c.getX() * ( a.getY() - b.getY() ) ) ) / 2 );
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point) {

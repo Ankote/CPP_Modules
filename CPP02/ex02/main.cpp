@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:21 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/09 21:09:27 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 16:48:12 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main( void ) {
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
+    std::cout << Fixed::max( 20, b ) << std::endl;
     return 0;
 }

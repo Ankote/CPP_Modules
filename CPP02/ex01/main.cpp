@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:51 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/06 14:31:25 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 16:33:51 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int main( void )
         std::cout << "b is " << b.toInt() << " as integer" << std::endl;
         std::cout << "c is " << c.toInt() << " as integer" << std::endl;
         std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+        
     return 0;
 }

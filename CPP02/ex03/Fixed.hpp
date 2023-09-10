@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/10 14:58:02 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 17:01:47 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ class Fixed
         static  Fixed  const  &max (const Fixed &a, const Fixed &b);
         ~Fixed ();
 
-        // int a = 12 ;  //lvalue rvalue
 };
 
 std::ostream	&operator<<(std::ostream &o, const Fixed &a);
