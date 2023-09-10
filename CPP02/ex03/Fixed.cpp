@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:02 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/10 14:39:32 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 14:58:25 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,4 +181,3 @@ std::ostream	&operator<<(std::ostream &o, const Fixed &a)
     o << a.toFloat();
     return (o);
 }
-

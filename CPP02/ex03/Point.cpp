@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 14:33:21 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/09 21:09:27 by aankote          ###   ########.fr       */
+/*   Created: 2023/09/09 20:42:52 by aankote           #+#    #+#             */
+/*   Updated: 2023/09/09 21:14:14 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
+#include <cmath>
 
-int main( void ) {
-    Fixed a;
-    Fixed const b( Fixed( 5.05f) * Fixed( 2 ) );
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    return 0;
+
+Point::Point(){};
+
+Point::Point(Fixed _x, Fixed _y) : _X(_x), _Y(_y) {}
+
+Point::Point(const Point& other) : _X(other._X), _Y(other._Y) {}
+
+Point& Point::operator=(const Point& other) {
+    (void)other;
+        return *this;
 }
+Fixed Point::getX() const { return _X;}
+
+Fixed Point::getY() const { return _Y;}

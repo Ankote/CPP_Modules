@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/09 21:26:36 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/10 14:58:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Fixed
 
         /***************************************************/
         
-        Fixed   operator+(const Fixed &src)  const;
+        Fixed   operator+(const Fixed &src) const;
         Fixed   operator-(const Fixed &src) const;
         Fixed   operator*(const Fixed &src) const;
         Fixed   operator/(const Fixed &src) const;
@@ -64,13 +64,9 @@ class Fixed
         
         static  Fixed  const  &min (const Fixed &a, const Fixed &b);
         static  Fixed  const  &max (const Fixed &a, const Fixed &b);
-        
         ~Fixed ();
 
         // int a = 12 ;  //lvalue rvalue
-
-
-
 };
 
 std::ostream	&operator<<(std::ostream &o, const Fixed &a);

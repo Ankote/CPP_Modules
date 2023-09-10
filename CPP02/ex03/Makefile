@@ -6,7 +6,7 @@
 #    By: aankote <aankote@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 14:33:19 by aankote           #+#    #+#              #
-#    Updated: 2023/09/09 16:41:28 by aankote          ###   ########.fr        #
+#    Updated: 2023/09/09 21:10:58 by aankote          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp Fixed.cpp
+FILES = main.cpp Fixed.cpp  Point.cpp bsp.cpp
 
 OBJCS = $(FILES:.cpp=.o)
 

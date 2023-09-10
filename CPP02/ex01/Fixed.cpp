@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:45 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/08 20:43:46 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/09 14:14:38 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
         this->_fixed_point_value = roundf(value * (pow(2, this->_fractional_bits)));
     }
 
-    float	Fixed::toFloat( void ) const
+    float   Fixed::toFloat( void ) const
     {
         return (this->_fixed_point_value / pow(2, this->_fractional_bits));
     }
@@ -60,7 +60,7 @@
         return (this->_fixed_point_value / pow(2, this->_fractional_bits));
     }
 
-    std::ostream	&operator<<(std::ostream &o, const Fixed &a)
+    std::ostream    &operator<<(std::ostream &o, const Fixed &a)
     {
         o << a.toFloat();
         std::cout << "     oprerator overload called";
