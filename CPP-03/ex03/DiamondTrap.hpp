@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 09:44:40 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/16 15:27:10 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/21 18:40:27 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ class DiamondTrap : public FragTrap , public  ScavTrap
         const std::string &getName() const;
 
         void whoAmI();
+
+        void aff();
 };

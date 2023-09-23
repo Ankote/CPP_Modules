@@ -6,20 +6,17 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:22:01 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 14:27:49 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/21 15:58:12 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
-#include "WrongDog.hpp"
 
-void testAnimal()
+void testAAnimal()
 {
-    Animal* meta = new Animal();
-    Animal* j = new Dog();
-    Animal* i = new Cat();
+    AAnimal* j = new Dog();
+    AAnimal* i = new Cat();
     
     std::cout << "Type       :   ";
     std::cout << j->getType() << " " << std::endl;
@@ -27,37 +24,32 @@ void testAnimal()
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); 
     j->makeSound();
-    *meta = *i;
-    *i = *j;
-    i->makeSound();
     
     delete i;
     delete j;
-    delete meta;
 }
 
-void testWrongAnimal()
+/**********************************************************************************
+void WrongTest()
 {
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* j = new WrongDog();
-    const WrongAnimal* i = new WrongCat();
+    AAnimal* j = new AAnimal(); // here I can't create  an instance of class AAnimal
+    AAnimal* i = new Cat();
+    
     std::cout << "Type       :   ";
     std::cout << j->getType() << " " << std::endl;
     std::cout << "Type       :   ";
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); 
     j->makeSound();
-    meta->makeSound();
     
     delete i;
     delete j;
-    delete meta;
 }
+************************************************************************************/
 
 int main()
 {
-    testAnimal();
-
-//  testWrongAnimal();
+    testAAnimal();
+    // testWrongAAnimal();
     return 0;
 }

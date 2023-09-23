@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:22:01 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 10:56:33 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/21 14:14:26 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    subTest()
 }
 
 
-void    DeepCopy()
+void    DeepCopy1()
 {
     {
         Cat c1;
@@ -46,18 +46,49 @@ void    DeepCopy()
     }
 }
 
+void    DeepCopy2()
+{
+    Animal *an = new Animal();;
+    Animal *Cat1 = new Cat();
+    Animal *Cat2 = new Cat();
+    
+    *Cat2 = *Cat1;   
+
+    Cat2->makeSound();
+    *an = *Cat2;
+
+    an->makeSound();
+
+    delete Cat1;
+    delete Cat2;
+    delete an;
+}
+
 void    Addit_test()
 {
     Cat *CatPtr = new Cat();
     
     Cat CatCopy(*CatPtr);
     
+    Brain *brain_ptr = new Brain;
+
+    brain_ptr->setIdeas(55, "need food");
+    
+    CatCopy.setBrain(brain_ptr);
+    brain_ptr->setIdeas(55, "nothiiiing");
+    
+    std::cout << "\n________________________________________\n\n";
+    std::cout << brain_ptr->getIdeas(55) << std::endl;
+    std::cout << CatCopy.getBrain()->getIdeas(55) << std::endl;
+    std::cout << "________________________________________\n";
+    
+    delete brain_ptr;
     delete CatPtr;
 }
 
 int main()
 {
-    DeepCopy();
+    DeepCopy2();
 
     return 0;
 }

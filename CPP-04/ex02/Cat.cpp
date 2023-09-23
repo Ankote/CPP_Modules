@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:27:14 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 14:25:31 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/21 15:56:37 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat()
     std::cout << "{Cat} Default constructor Called" << std::endl;;
 }
 
-Cat::Cat(const Cat &other) : Animal("Unknoun type")
+Cat::Cat(const Cat &other) : AAnimal("Unknoun type")
 {
     this->type = other.type;
     std::cout << "{Cat} Copy constructor Called." << std::endl;

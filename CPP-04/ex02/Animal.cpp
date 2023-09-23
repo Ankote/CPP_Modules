@@ -1,59 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:18:08 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 13:02:10 by aankote          ###   ########.fr       */
+/*   Updated: 2023/09/21 15:22:44 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
-    this->type = "Unknowen Animal";
-    std::cout << "{Animal} Default constructor Called" << std::endl;;
+    this->type = "Unknowen AAnimal";
+    std::cout << "{AAnimal} Default constructor Called" << std::endl;;
 }
 
-Animal::Animal(const Animal &other)
+AAnimal::AAnimal(const AAnimal &other)
 {
     this->type = other.type;
-    std::cout << "{Animal} Copy constructor Called." << std::endl;
+    std::cout << "{AAnimal} Copy constructor Called." << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &other)
+AAnimal &AAnimal::operator=(const AAnimal &other)
 {
     this->type = other.type;
-    std::cout << "{Animal} copied via copy assignment." << std::endl;
+    std::cout << "{AAnimal} copied via copy assignment." << std::endl;
     return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-    std::cout << "{Animal} Destructor Called." << std::endl;
+    std::cout << "{AAnimal} Destructor Called." << std::endl;
 }
 
-Animal::Animal(std::string type)
+AAnimal::AAnimal(std::string type)
 {
     this->type = type;
-    std::cout << "{Animal} created with type: " << this->type << std::endl;
+    std::cout << "{AAnimal} created with type: " << this->type << std::endl;
 }
 
-const std::string &Animal::getType() const
+const std::string &AAnimal::getType() const
 {
     return (this->type);
 }
 
-void Animal::setType(std::string type)
+void AAnimal::setType(std::string type)
 {
     this->type = type;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "This animal makes a generic sound." << std::endl;
 }
