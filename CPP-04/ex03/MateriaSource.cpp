@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 11:43:22 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/24 00:31:14 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/03 18:38:15 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,15 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 MateriaSource &MateriaSource::operator=(const MateriaSource &src)
 {
     this->_type = src._type;
-    this->_countStore = src._countStore;
-    
+    this->_countStore = 0;
     for (int i = 0; i < this->_countStore; i ++)
     {
         delete this->_Store[i];
-       this->_Store[i] = src._Store[i]->clone();
+    }
+    this->_countStore = src._countStore;
+    for (int i = 0; i < src._countStore; i ++)
+    {
+        this->_Store[i] = src._Store[i]->clone();
     }
     return (*this);
 }

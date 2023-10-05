@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 23:11:46 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/24 00:29:44 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/03 18:34:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Character &Character::operator=(const Character &src)
     {
         return (*this);
     }
-
+    _count = 0;
     for (int i = 0; i < _count ; i++)
     {
         delete inventory[i];

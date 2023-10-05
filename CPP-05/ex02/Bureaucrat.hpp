@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
-
 #include <exception>
+#include "AForm.hpp"
+class AForm;
 
-class Bureaucrat
+class Bureaucrat 
 {
     private :
 
@@ -66,6 +67,12 @@ class Bureaucrat
                 virtual ~GradeTooLowException() throw();
                 virtual const char* what() const throw();
         };
+
+        /*************************Ex01*****************/
+        void signForm(AForm &);
+
+        /******************ex02************************/
+        void executeForm(AForm const & form);
 };
 
 std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj);

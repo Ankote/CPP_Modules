@@ -4,14 +4,15 @@ CXX = c++ -std=c++98
 
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
-FILES = main.cpp  Bureaucrat.cpp
+FILES = main.cpp  Bureaucrat.cpp Form.cpp
 
 
 OBJCS = $(FILES:.cpp=.o)
 
+HEADERS =  Bureaucrat.hpp Form.hpp
 all : $(NAME)
 
-$(NAME) : $(OBJCS) Bureaucrat.hpp
+$(NAME) : $(OBJCS) $(HEADERS)
 		$(CXX) $(CPPFLAGS) $(OBJCS) -o $(NAME)
 
 clean :
