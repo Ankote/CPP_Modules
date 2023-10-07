@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 20:22:25 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/06 21:32:38 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/07 14:34:36 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,40 +48,30 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-    bool check = false;
     try
     {
         dynamic_cast<DerivedA&>(p);
         std::cout << "P is object Type A" << std::endl;
-        check = true;
     }
     catch(...)
-    {
-
+    {  
+        try
+        {
+            dynamic_cast<DerivedB&>(p);
+            std::cout << "P is object Type B" << std::endl;
+        }
+        catch(...)
+        {
+            try
+            {
+                dynamic_cast<DerivedC&>(p);
+                std::cout << "P is object Type C" << std::endl;
+            }
+            catch(...)
+            {
+                std::cerr <<("Can't cast because the Pointer Point to Base Class") << std::endl;
+            }
+        }
     }
-    
-    try
-    {
-        dynamic_cast<DerivedB&>(p);
-        std::cout << "P is object Type B" << std::endl;
-        check = true;
-    }
-    catch(...)
-    {
-
-    }
-    
-    try
-    {
-        dynamic_cast<DerivedC&>(p);
-        std::cout << "P is object Type C" << std::endl;
-        check = true;
-    }
-    catch(...)
-    {
-
-    }
-    if (!check)
-        std::cerr <<("Can't cast because the Pointer Point to Base Class") << std::endl;
 }
 

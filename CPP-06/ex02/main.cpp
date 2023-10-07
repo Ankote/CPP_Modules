@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:21:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/06 21:29:21 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/07 14:34:50 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void refFalsTsey()
 
 int main()
 {
-    pointValidTsey();
-    pointFalsTsey();
-    refValidTsey();
+    // pointValidTsey();
+    // pointFalsTsey();
+    // refValidTsey();
     refFalsTsey() ;
     return 0;
 }
