@@ -9,7 +9,6 @@ void validTest()
         Bureaucrat b;
 
         b.setGrade(1);
-        b.setName("Valid");
         std::cout << b << std::endl;
     }
     catch (const std::exception &e)

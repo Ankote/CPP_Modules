@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:05:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/03 18:49:41 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:00:24 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void test2()
     
         Form form1("CNSS", 1, 5);
         Bureaucrat b("Ayoub", 10);
-        form1.beSigned(b);
         b.signForm(form1);
     }
     catch(const std::exception& e)
@@ -54,8 +53,8 @@ void test3()
     
         Form form1("CNSS", 12, 14);
         Bureaucrat b("Ayoub", 10);
-        form1.beSigned(b);
         b.signForm(form1);
+        std::cout << form1;
     }
     catch(const std::exception& e)
     {
@@ -65,8 +64,8 @@ void test3()
 
 int main()
 {
-    test1();
-    test2();
+    // test1();
+    // test2();
     test3();
     
 }

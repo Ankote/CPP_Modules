@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:57 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 20:26:39 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:20:04 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class ShrubberyCreationForm : public AForm
         ~ShrubberyCreationForm();
         
         ShrubberyCreationForm(std::string);
+        
+        const std::string &getTarget() const;
         
         void execute(Bureaucrat const & executor) const;
 };

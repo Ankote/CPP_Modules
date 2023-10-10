@@ -6,12 +6,11 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:42:25 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 21:37:01 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:55:29 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-
 
 Intern::Intern()
 {
@@ -42,21 +41,15 @@ AForm* Intern::makeForm(std::string formName, std::string target)
     i = 0;
     
     AForm *table[3] = {new  ShrubberyCreationForm(target), new RobotomyRequestForm(target),new  PresidentialPardonForm(target)};
-    while (i <3 && formName != table[i]->getName() )
-    {
+    while (i < 3 && formName != table[i]->getName() )
         i++;
-    }
     for (int j = 0 ; j < 3 ; j++)
     {
         if (i != j)
             delete table[j];
     }
-    if (i < 3)
-    {
-        std::cout << "\033[0;32mIntern creates *" << table[i]->getName() <<"*\033[0m" <<std::endl;
-        
-        return table[i];
-    }
-    std::cout << "\033[0;31Cant Find the Form\033[0m" << std::endl;
-    return (NULL);
+    if (i > 2)
+        throw AForm::GradeTooHighException("\033[0;31mSorry Can't Find this Form\033[0m");
+    std::cerr << "\033[0;32mIntern creates *" << table[i]->getName() <<"*\033[0m" <<std::endl;
+    return table[i];
 }

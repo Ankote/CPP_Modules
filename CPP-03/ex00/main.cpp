@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 20:08:26 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/15 17:15:41 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/09 16:55:58 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void test1()
         ClapTrap claptrap1("CL4P-TP");
         ClapTrap claptrap2("FR4G-TP");
 
-        claptrap1.attack("Bandit");
+        claptrap1.attack(claptrap2.getName());
         claptrap1.takeDamage(5);
         claptrap1.beRepaired(3);
 

@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:05:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 18:40:08 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:31:04 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void ValidTestShrubbery()
 {
     try
     {
-    
-        Bureaucrat b("Any", 12);
+        Bureaucrat b("Any", 1);
         ShrubberyCreationForm sh;
-        sh.beSigned(b);
-        sh.execute(b);
+        b.signForm(sh);
+        b.executeForm(sh);
     }
     catch(const std::exception& e)
     {
@@ -36,10 +35,9 @@ void InvalidTestShrubbery()
     try
     {
     
-        Bureaucrat b("Any", 146);
+        Bureaucrat b("Any", 1);
         ShrubberyCreationForm sh;
-        sh.beSigned(b);
-        sh.execute(b);
+        b.executeForm(sh);
     }
     catch(const std::exception& e)
     {
@@ -52,18 +50,16 @@ void ValidTestRobotomy()
      try
     {
     
-        Bureaucrat b("Any", 12);
+        Bureaucrat b("Any", 1);
         RobotomyRequestForm RrF;
-        RrF.beSigned(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
-        RrF.execute(b);
+        b.signForm(RrF);
+        std::cout << "\n___________________________________________\n";
+        b.executeForm(RrF);
+        std::cout << "\n___________________________________________\n";
+        b.executeForm(RrF);
+        std::cout << "\n___________________________________________\n";
+        b.executeForm(RrF);
+        std::cout << "\n___________________________________________\n";
     }
     catch(const std::exception& e)
     {
@@ -75,9 +71,9 @@ void InvalidTestRobotomy()
 {
      try
     {
-        Bureaucrat b("Any", 12);
+        Bureaucrat b("Any", 1);
         RobotomyRequestForm RrF;
-        RrF.execute(b);
+        b.executeForm(RrF);
     }
     catch(const std::exception& e)
     {
@@ -92,8 +88,8 @@ void ValidTestPresedential()
     
         Bureaucrat b("Any", 2);
         PresidentialPardonForm PpF;
-        PpF.beSigned(b);
-        PpF.execute(b);
+        b.signForm(PpF);
+        b.executeForm(PpF);
     }
     catch(const std::exception& e)
     {
@@ -105,25 +101,8 @@ void InvalidTestPresedential()
 {
     try
     {
-        Bureaucrat b("Any", 10);
+        Bureaucrat b("Any", 1);
         PresidentialPardonForm PpF;
-        PpF.beSigned(b);
-        PpF.execute(b);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-}
-
-
-void ValidtestExecute()
-{
-    try
-    {
-        Bureaucrat b("Any", 4);
-        PresidentialPardonForm PpF;
-        PpF.beSigned(b);
         b.executeForm(PpF);
     }
     catch(const std::exception& e)
@@ -133,29 +112,25 @@ void ValidtestExecute()
 }
 
 
-void InvalidtestExecute()
-{
-    try
-    {
-        Bureaucrat b("Any", 6);
-        PresidentialPardonForm PpF;
-        PpF.beSigned(b);
-        b.executeForm(PpF);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-}
 
 int main()
 {
-    // InvalidTestShrubbery();
-    // InvalidTestRobotomy();
-    // InvalidTestPresedential();
     // ValidTestShrubbery();
+    // InvalidTestShrubbery();
     // ValidTestRobotomy();
+    // InvalidTestRobotomy();
     // ValidTestPresedential();
-    InvalidtestExecute();
+    // InvalidTestPresedential();
+    try
+    {
+        Bureaucrat b("youness", 1);
+        RobotomyRequestForm f(b.getName());
+        b.signForm(f);
+        b.executeForm(f);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
 

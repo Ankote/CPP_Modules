@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:54 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 21:26:59 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:25:24 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ ShF::ShrubberyCreationForm(std::string str): AForm("Shrubbery Creation", 145, 13
 
 void ShF::execute(Bureaucrat const &executor) const
 {
-
     if (this->checkRequirements(executor) == false)
         throw ShF::GradeTooLowException();
     std::string _shrubbery = "_shrubbery";
@@ -70,3 +69,8 @@ void ShF::execute(Bureaucrat const &executor) const
     }
 }
 
+
+const std::string &ShF::getTarget() const
+{
+    return (this->target);
+}   

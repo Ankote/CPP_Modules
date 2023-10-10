@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _Name("Unknowen", 1)
+Bureaucrat::Bureaucrat() : _Name("Unknowen"), _grade(1)
 {
    
 }
@@ -9,15 +9,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 {
     if (this == &other)
         return;
-
+    *this = other;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this == &other)
         return (*this);
-    
-    this->_Name = other._Name;
     this->_grade = other._grade;
     return (*this);
 }
@@ -27,9 +25,8 @@ Bureaucrat::~Bureaucrat()
 
 }
 
-Bureaucrat::Bureaucrat(std::string name, int  grade)
+Bureaucrat::Bureaucrat(std::string name, int  grade) : _Name(name)
 {
-    this->_Name = name;
     if (grade < 1)
     {
         throw Bureaucrat::GradeTooHighException();
@@ -63,7 +60,6 @@ const std::string &Bureaucrat::getName() const
     return (this->_Name);
 }
 
-
 void Bureaucrat::setGrade(int grade)
 {
     if (grade < 1)
@@ -77,22 +73,19 @@ void Bureaucrat::setGrade(int grade)
     this->_grade = grade;
 }
 
-void Bureaucrat::setName(const std::string &name)
-{
-    this->_Name = name;
-}
+
 
 /**************************************************/
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-    std::cout << "GradeTooHighException Deafult constructor called" << std::endl;
+    // std::cout << "GradeTooHighException Deafult constructor called" << std::endl;
     this->message = "ERROR! Grade Too High Exception";
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {
-    std::cout << "GradeTooHighException Destructor called" << std::endl;
+    // std::cout << "GradeTooHighException Destructor called" << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what()const  throw()
@@ -100,9 +93,10 @@ const char* Bureaucrat::GradeTooHighException::what()const  throw()
     return (this->message.c_str());
 }
 
- /**************************Low*************************/
+ /***********************************Low********************************************/
 
-Bureaucrat::GradeTooLowException::GradeTooLowException() : message("ERROR! Grade Too Low Exception")
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+    : message("ERROR! Grade Too Low Exception")
 {
     
     std::cout << "GradeTooLowException Deafult constructor called" << std::endl;
@@ -110,14 +104,13 @@ Bureaucrat::GradeTooLowException::GradeTooLowException() : message("ERROR! Grade
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException()  throw()
 {
-    std::cout << "GradeTooLowException Destructor called" << std::endl;
+    // std::cout << "GradeTooLowException Destructor called" << std::endl;
 }
 
-const char* Bureaucrat::GradeTooLowException::what()const  throw()
+const char* Bureaucrat::GradeTooLowException::what()const throw()
 {
     return (this->message.c_str());
 }
-
 
 std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj)
 {

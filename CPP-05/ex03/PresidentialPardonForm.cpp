@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:40 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 21:26:25 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:20:34 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,8 @@ void PpF::execute(Bureaucrat const &executor) const
     std::cout << "\033[0;34m" << this->target;
     std::cout << " has been pardoned by Zaphod Beeblebrox.\033[0m" <<std::endl;
 }
+
+const std::string &PpF::getTarget() const
+{
+    return (this->target);
+}   

@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:49 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 21:26:40 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:24:50 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,8 @@ void RbF::execute(Bureaucrat const &executor) const
         check = true;
     }
 }
+
+const std::string &RbF::getTarget() const
+{
+    return (this->target);
+}   

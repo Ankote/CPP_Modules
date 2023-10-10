@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 20:36:50 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 21:25:18 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 17:11:39 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ AForm::AForm() :  _Signed(false), _signGrade(1), _execGrad(1)
 
 AForm::AForm(const AForm &o) :_signGrade(o._signGrade), _execGrad(o._execGrad)
 {
-    _Name = o._Name;
     this->_Signed = o._Signed;
     if (this->_execGrad > 150 || this->_signGrade > 150)
         throw AForm::GradeTooLowException();
@@ -34,14 +33,12 @@ AForm &AForm::operator= (const AForm &o)
 {
     if (this == &o)
         return (*this);
-    _Name = o._Name;
-    // std::cout << "AForm Copy Constructor Called" << std::endl;
     return (*this);
 }
 
 AForm::~AForm()
 {
-    // std::cout << "AForm Destructor Called" << std::endl;
+    
 }
 /***************************************************/
 
@@ -55,13 +52,18 @@ AForm::AForm (std::string name, const int &signRecGrade, const int &execReqGrade
 
 AForm::GradeTooHighException::GradeTooHighException()
 {
-    // std::cout << "AForm Deafult constructor called" << std::endl;
     this->message = "\033[0;31mERROR! Grade Too High Exception";
 }
 
+AForm::GradeTooHighException::GradeTooHighException(std::string str)
+{
+    this->message = str;
+}
+
+
 AForm::GradeTooHighException::~GradeTooHighException() throw()
 {
-    // std::cout << "GradeTooHighException AForm Destructor called" << std::endl;
+    
 }
 
 const char* AForm::GradeTooHighException::what()const  throw()
@@ -74,12 +76,16 @@ const char* AForm::GradeTooHighException::what()const  throw()
 AForm::GradeTooLowException::GradeTooLowException() : message("\033[0;31mERROR! Grade Too Low Exception\033[0m")
 {
     
-    // std::cout << "GradeTooLowException AForm Deafult constructor called" << std::endl;
+}
+
+AForm::GradeTooLowException::GradeTooLowException(std::string msg) : message(msg)
+{
+    
 }
 
 AForm::GradeTooLowException::~GradeTooLowException()  throw()
 {
-    // std::cout << "GradeTooLowException AForm Destructor called" << std::endl;
+    
 }
 
 const char* AForm::GradeTooLowException::what()const  throw()

@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:44 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 14:46:36 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/09 19:57:51 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ class PresidentialPardonForm: public AForm
         
         ~PresidentialPardonForm();
 
+        PresidentialPardonForm(std::string target);
+        
         void execute(Bureaucrat const & executor) const;
 };

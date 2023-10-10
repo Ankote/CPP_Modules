@@ -1,8 +1,8 @@
 NAME = Bureaucrat
 
-CXX = c++ -std=c++98
+CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror  -std=c++98 -fsanitize=address
 
 FILES = main.cpp  Bureaucrat.cpp
 

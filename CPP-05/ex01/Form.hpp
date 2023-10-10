@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 20:36:54 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/03 17:46:58 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 14:37:17 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Form
 {
     private :
         
-        std::string _Name;
+        const std::string _Name;
         
         bool _Signed;
 
@@ -81,3 +81,5 @@ class Form
     void beSigned(Bureaucrat &);
 
 };
+
+std::ostream &operator<<(std::ostream &o, const Form &form);

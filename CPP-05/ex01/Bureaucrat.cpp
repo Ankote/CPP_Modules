@@ -16,8 +16,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this == &other)
         return (*this);
-    
-    this->_Name = other._Name;
     this->_grade = other._grade;
     return (*this);
 }
@@ -27,9 +25,8 @@ Bureaucrat::~Bureaucrat()
 
 }
 
-Bureaucrat::Bureaucrat(std::string name, int  grade)
+Bureaucrat::Bureaucrat(std::string name, int  grade) : _Name(name)
 {
-    this->_Name = name;
     if (grade < 1)
     {
         throw Bureaucrat::GradeTooHighException();
@@ -77,10 +74,6 @@ void Bureaucrat::setGrade(int grade)
     this->_grade = grade;
 }
 
-void Bureaucrat::setName(const std::string &name)
-{
-    this->_Name = name;
-}
 
 /**************************************************/
 
@@ -118,7 +111,6 @@ const char* Bureaucrat::GradeTooLowException::what()const  throw()
     return (this->message.c_str());
 }
 
-
 std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj)
 {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
@@ -128,11 +120,14 @@ std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj)
 /****************************************Ex01**********************************************/
 void Bureaucrat::signForm(Form &form)
 {
-    if (form.getSigned())
+    try
+    {
+        form.beSigned(*this);
         std::cout <<"\033[0;32m"<< this->_Name << " signed " << form.getName() <<"\033[0m"<< std::endl;
-    else
+    }
+    catch(std::exception &e)
     {
         std::cout <<"\033[0;31m" << this->_Name << " couldn’t sign " << form.getName();
-        std::cout << " maybe Because " << this->_Name << " Does not meet the conditions\033[0m"  << std::endl;
+        std::cout << " maybe Because " << e.what()  << std::endl;
     }
 }

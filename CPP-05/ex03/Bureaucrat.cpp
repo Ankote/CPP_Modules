@@ -17,7 +17,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     if (this == &other)
         return (*this);
     
-    this->_Name = other._Name;
     this->_grade = other._grade;
     return (*this);
 }
@@ -27,9 +26,8 @@ Bureaucrat::~Bureaucrat()
 
 }
 
-Bureaucrat::Bureaucrat(std::string name, int  grade)
+Bureaucrat::Bureaucrat(std::string name, int  grade) : _Name(name)
 {
-    this->_Name = name;
     if (grade < 1)
     {
         throw Bureaucrat::GradeTooHighException();
@@ -77,22 +75,16 @@ void Bureaucrat::setGrade(int grade)
     this->_grade = grade;
 }
 
-void Bureaucrat::setName(const std::string &name)
-{
-    this->_Name = name;
-}
-
 /**************************************************/
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-    // std::cout << "GradeTooHighException Deafult constructor called" << std::endl;
     this->message = "\033[0;31mERROR! Grade Too High Exception\033[0m";
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {
-    // std::cout << "GradeTooHighException Destructor called" << std::endl;
+
 }
 
 const char* Bureaucrat::GradeTooHighException::what()const  throw()
@@ -105,12 +97,11 @@ const char* Bureaucrat::GradeTooHighException::what()const  throw()
 Bureaucrat::GradeTooLowException::GradeTooLowException() : message("\033[0;31mERROR! Grade Too Low Exception\033[0m")
 {
     
-    // std::cout << "\033[0;31mGradeTooLowException Deafult constructor called" << std::endl;
 }
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException()  throw()
 {
-    // std::cout << "\033[0;31mGradeTooLowException Destructor called" << std::endl;
+
 }
 
 const char* Bureaucrat::GradeTooLowException::what()const  throw()
@@ -125,28 +116,34 @@ std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj)
     return (os);
 }
 
+
 /****************************************Ex01**********************************************/
 void Bureaucrat::signForm(AForm &form)
 {
-    if (form.getSigned())
+    try
+    {
+        form.beSigned(*this);
         std::cout <<"\033[0;32m"<< this->_Name << " signed " << form.getName() <<"\033[0m"<< std::endl;
-    else
+    }
+    catch(std::exception &e)
     {
         std::cout <<"\033[0;31m" << this->_Name << " couldn’t sign " << form.getName();
-        std::cout << " maybe Because " << this->_Name << " Does not meet the conditions\033[0m"  << std::endl;
+        std::cout << " maybe Because " << e.what()  << std::endl;
     }
 }
 
+/****************************************Ex02**********************************************/
+
 void Bureaucrat::executeForm(AForm const & form)
 {
-    if (this->_grade <= form.getExecGrade())
+    try
     {
+        form.execute(*this);
         std::cout <<"\033[0;32m"<< this->_Name << " Executed " << form.getName() <<"\033[0m"<< std::endl;
-   
     }
-    else
+    catch(const std::exception& e)
     {
         std::cout <<"\033[0;31m" << this->_Name << " couldn’t Exicute" << form.getName();
-        std::cout << " maybe Because " << this->_Name << " Does not meet the conditions\033[0m"  << std::endl;
+        std::cout << " maybe Because " <<  e.what() << '\n';
     }
 }

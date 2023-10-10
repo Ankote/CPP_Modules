@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:52 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 14:46:27 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/09 19:58:39 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class RobotomyRequestForm: public AForm
         RobotomyRequestForm&operator=(const RobotomyRequestForm&);
         
         ~RobotomyRequestForm();
+        
+        RobotomyRequestForm(std::string target);
         
         void execute(Bureaucrat const & executor) const;
 };

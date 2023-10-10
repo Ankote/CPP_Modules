@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:49 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 18:20:58 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:37:29 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 typedef RobotomyRequestForm RbF;
 
-RbF::RobotomyRequestForm() : AForm("Shrubbery", 72, 45)
+RbF::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
     this->target = "Boot";
+}
+
+RbF::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
+{
+    this->target = target;
 }
 
 RbF::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj)
@@ -36,7 +41,6 @@ RbF::~RobotomyRequestForm()
 {
     
 }
-
 
 void RbF::execute(Bureaucrat const &executor) const
 {

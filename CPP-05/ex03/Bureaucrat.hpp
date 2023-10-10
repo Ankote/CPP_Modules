@@ -9,7 +9,7 @@ class Bureaucrat
 {
     private :
 
-        std::string _Name;
+        const std::string _Name;
 
         int _grade;
     
@@ -38,8 +38,6 @@ class Bureaucrat
         const std::string &getName() const;   
 
         void setGrade(int grade);
-
-        void setName(const std::string &name);
 
     /********************************Exception Classes******************************/
 

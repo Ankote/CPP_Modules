@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:40 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/04 18:21:03 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:34:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 typedef PresidentialPardonForm PpF;
 
-PpF::PresidentialPardonForm() : AForm("Shrubbery", 25, 5)
+PpF::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
     this->target = "President";
+}
+
+PpF::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
+{
+    this->target = target;
 }
 
 PpF::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj)
@@ -37,7 +42,6 @@ PpF::~PresidentialPardonForm()
 {
     
 }
-
 
 void PpF::execute(Bureaucrat const &executor) const
 {

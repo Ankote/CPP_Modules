@@ -19,7 +19,7 @@ class AForm
 {
     private :
         
-        std::string _Name;
+        const std::string _Name;
         
         bool _Signed;
 
@@ -50,6 +50,7 @@ class AForm
         public :
 
             GradeTooHighException();
+            GradeTooHighException(std::string );
             virtual ~GradeTooHighException() throw();
             virtual const char* what() const throw();
     };
@@ -62,6 +63,8 @@ class AForm
         public :
 
             GradeTooLowException() ;
+
+            GradeTooLowException(std::string );
             virtual ~GradeTooLowException() throw();
             virtual const char* what() const throw();
     };
@@ -75,13 +78,13 @@ class AForm
     const int &getSignGrade() const;
 
     const int &getExecGrade() const;
-
     /********************************************************************/
 
     virtual void beSigned(Bureaucrat &);
     /***********************************ex02**********************/
 
     virtual void execute(Bureaucrat const & executor) const = 0;
+    virtual const std::string &getTarget() const = 0;
 
     bool checkRequirements(const Bureaucrat &exceutor) const;
 };

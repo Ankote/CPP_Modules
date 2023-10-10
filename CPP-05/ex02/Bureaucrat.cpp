@@ -16,8 +16,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this == &other)
         return (*this);
-    
-    this->_Name = other._Name;
+
     this->_grade = other._grade;
     return (*this);
 }
@@ -27,9 +26,8 @@ Bureaucrat::~Bureaucrat()
 
 }
 
-Bureaucrat::Bureaucrat(std::string name, int  grade)
+Bureaucrat::Bureaucrat(std::string name, int  grade) : _Name(name)
 {
-    this->_Name = name;
     if (grade < 1)
     {
         throw Bureaucrat::GradeTooHighException();
@@ -75,11 +73,6 @@ void Bureaucrat::setGrade(int grade)
         throw Bureaucrat::GradeTooLowException();
     }
     this->_grade = grade;
-}
-
-void Bureaucrat::setName(const std::string &name)
-{
-    this->_Name = name;
 }
 
 /**************************************************/
@@ -128,25 +121,30 @@ std::ostream &operator<< (std::ostream& os, const Bureaucrat& obj)
 /****************************************Ex01**********************************************/
 void Bureaucrat::signForm(AForm &form)
 {
-    if (form.getSigned())
+    try
+    {
+        form.beSigned(*this);
         std::cout <<"\033[0;32m"<< this->_Name << " signed " << form.getName() <<"\033[0m"<< std::endl;
-    else
+    }
+    catch(std::exception &e)
     {
         std::cout <<"\033[0;31m" << this->_Name << " couldn’t sign " << form.getName();
-        std::cout << " maybe Because " << this->_Name << " Does not meet the conditions\033[0m"  << std::endl;
+        std::cout << " maybe Because " << e.what()  << std::endl;
     }
 }
 
+/****************************************Ex02**********************************************/
+
 void Bureaucrat::executeForm(AForm const & form)
 {
-    if (this->_grade <= form.getExecGrade())
+    try
     {
+        form.execute(*this);
         std::cout <<"\033[0;32m"<< this->_Name << " Executed " << form.getName() <<"\033[0m"<< std::endl;
-   
     }
-    else
+    catch(const std::exception& e)
     {
-        std::cout <<"\033[0;31m" << this->_Name << " couldn’t Exicute" << form.getName();
-        std::cout << " maybe Because " << this->_Name << " Does not meet the conditions\033[0m"  << std::endl;
+        std::cerr <<"\033[0;31m" << this->_Name << " couldn’t Exicute" << form.getName();
+        std::cerr << " maybe Because " <<  e.what() << '\n';
     }
 }

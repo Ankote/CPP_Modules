@@ -19,7 +19,7 @@ class AForm
 {
     private :
         
-        std::string _Name;
+        const std::string _Name;
         
         bool _Signed;
 
@@ -83,5 +83,9 @@ class AForm
 
     virtual void execute(Bureaucrat const & executor) const = 0;
 
+    int isExicuted();
+    
     bool checkRequirements(const Bureaucrat &exceutor) const;
 };
+
+std::ostream &operator<<(std::ostream &o, const AForm &form);
