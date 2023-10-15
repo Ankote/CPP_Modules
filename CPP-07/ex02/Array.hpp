@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:35:29 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/07 21:11:15 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/15 16:05:49 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,13 @@ class Array
     
     public :
         
-        Array() : arraySize(1)
+        Array() : arraySize(0)
         {
             arr = new T[0];
-            arr[0] = T();
         }
-               
         Array(unsigned int n)
         { 
-            arr = (new T[n]);
+            arr = new T[n];
             arraySize = n;
             for (unsigned int i = 0; i < n; i++)
             {
@@ -45,14 +43,13 @@ class Array
         {
             if (this == &other)
                 return *this;
-            this->arraySize = other.arraySize;
-    
             if (arr)
                 delete[] arr;
             this->arr = new T[other.arraySize];
-            for (size_t i = 0; i < arraySize ; i ++)
+            this->arraySize = other.arraySize;
+            for (unsigned int  i = 0; i <this->arraySize ; i ++)
             {
-               this[i] = other[i];
+                this->arr[i] = other.arr[i];
             }
             return (*this);
         }
@@ -68,9 +65,9 @@ class Array
            delete[] arr;
         }
         
-        T &operator[](const unsigned int &index) const
+        T &operator[](const int &index) const
         {
-            if (index < arraySize) 
+            if (index < (int)arraySize && index >= 0) 
             {
                 return arr[index];
             } 
@@ -85,25 +82,3 @@ class Array
             return (this->arraySize);
         } 
 };
-
-// In the first line, int *a = new int();
-// , new allocates memory for an integer and initializes 
-// it to the default value (zero for integers). 
-// It's not equivalent to calloc because calloc 
-// initializes the allocated memory to zero for
-//  all bytes, while new int() initializes only 
-//  the int to zero.
- 
-
-
-// In the first line, int *a = new int(5);
-// initializ ewith 5
-//  the int to zero.
-
-// In the second line, int *a = new int;,
-//  new allocates memory for an integer, 
-//  but it does not initialize it. It's
-//   not equivalent to malloc because malloc 
-//   allocates uninitialized memory, while new int
-//    allocates }memory for an integer and invokes the constructor (if any) for the int type.
-

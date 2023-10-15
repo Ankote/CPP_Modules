@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:46:49 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/10 17:24:50 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 09:38:26 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ RbF::RobotomyRequestForm(std::string str): AForm("Robotomy Request", 72, 45)
 }
 
 
+
 void RbF::execute(Bureaucrat const &executor) const
 {
-    static bool check = false;
-    
+    srand(time(NULL));
+    static bool check = rand() % 2;
     if (this->checkRequirements(executor) == false)
         throw RbF::GradeTooLowException();
     if(check == true)

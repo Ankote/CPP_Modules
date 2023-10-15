@@ -20,21 +20,6 @@ void serializeTest()
     delete d;
 }
 
-void failedTest()
-{
-    Data *data = new Data();
-    Data *data3 = new Data();
-    Data *data2 = Serializer::deserialize(Serializer::serialize(data3));
-
-    if (data == data2)
-        std::cout << "Serialization and Deserialization Successful!" << std::endl;
-    else
-        std::cout << "Serialization and Deserialization Failed!" << std::endl;
-    
-    delete data;
-    delete data3;
-}
-
 void validTest()
 {
     Data *data = new Data();
@@ -61,5 +46,6 @@ void AddTest()
 
 int main()
 {
-     serializeTest();
+    // validTest();
+    AddTest();
 }

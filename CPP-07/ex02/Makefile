@@ -2,11 +2,12 @@ NAME = Array
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 FILES = main.cpp
 
 HEADERS = Array.hpp
+
 OBJCS = $(FILES:.cpp=.o)
 
 all : $(NAME)

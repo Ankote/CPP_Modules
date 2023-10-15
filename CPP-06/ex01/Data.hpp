@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:35:13 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/06 13:37:36 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:47:47 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@
 class Data
 {
     public :
-        void print()
-        {
-            std::cout << "Hiii I am A Data" << std::endl;
-        }
+        void print();
         Data();
         
         Data(const Data &);

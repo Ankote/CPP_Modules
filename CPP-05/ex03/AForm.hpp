@@ -88,3 +88,4 @@ class AForm
 
     bool checkRequirements(const Bureaucrat &exceutor) const;
 };
+std::ostream &operator<<(std::ostream &o, const AForm &form);

@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 20:36:50 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/10 17:11:39 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/10 18:40:13 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,18 @@ bool AForm::checkRequirements(const Bureaucrat &executor) const
         return false;
     }
     return true;
+}
+
+
+std::ostream &operator<<(std::ostream &o, const AForm &form)
+{
+    o << "Name                        : " << form.getName() << std::endl;
+    o << "grade required to sign Form : " << form.getSigned() << std::endl;
+    o << "grade required to execute   : " << form.getExecGrade() << std::endl;
+    o << "Status                      : ";
+    if (form.getSigned())
+        o << "Signed" << std::endl;
+    else
+        o << "Not Signed" << std::endl;
+    return(o);
 }

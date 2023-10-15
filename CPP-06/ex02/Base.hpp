@@ -6,15 +6,15 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:00:49 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/06 18:43:05 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 16:35:03 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include <iostream>
 class Base
 {
     public:
-    
+
     virtual ~Base();
 };

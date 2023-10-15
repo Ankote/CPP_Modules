@@ -2,7 +2,7 @@ NAME = Serialization
 
 CPP = c++ 
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = Serialization.cpp Data.cpp main.cpp
 

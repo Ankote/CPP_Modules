@@ -1,10 +1,10 @@
 NAME = Bureaucrat
 
-CXX = c++ -std=c++98
+CXX = c++ 
 
 CPPFLAGS = -Wall -Wextra -Werror
 
-FILES = main.cpp  Bureaucrat.cpp Form.cpp
+FILES = main.cpp  Bureaucrat.cpp Form.cpp -std=c++98
 
 
 OBJCS = $(FILES:.cpp=.o)

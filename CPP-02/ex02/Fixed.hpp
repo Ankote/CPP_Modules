@@ -6,12 +6,12 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:33:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/11 19:54:11 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/14 18:52:51 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _FIXED_HPP_
-#define _FEXED_HPP_
+#define _FIXED_HPP_
 #include <iostream>
 # include <cmath>
 

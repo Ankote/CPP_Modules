@@ -2,13 +2,13 @@ NAME = Serialization
 
 CPP = c++ 
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 FILES = Base.cpp main.cpp generate.cpp
 
 OBJCS = $(FILES:.cpp=.o)
 
-HEADERS =  Base.hpp DerivedA.hpp  DerivedB.hpp  DerivedC.hpp generate.hpp
+HEADERS =  Base.hpp A.hpp  B.hpp  C.hpp generate.hpp
 
 all : $(NAME)
 

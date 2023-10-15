@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:05:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/10 17:31:04 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 09:24:06 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,11 @@ int main()
         Bureaucrat b("youness", 1);
         RobotomyRequestForm f(b.getName());
         b.signForm(f);
-        b.executeForm(f);
+        for (int i =0; i < 10 ; i ++)
+        {
+            b.executeForm(f);
+            std::cout << "\n\n_______________________________________\n\n";
+        }
     }
     catch (std::exception& e)
     {

@@ -79,13 +79,12 @@ void Bureaucrat::setGrade(int grade)
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-    // std::cout << "GradeTooHighException Deafult constructor called" << std::endl;
     this->message = "\033[0;31mERROR! Grade Too High Exception\033[0m";
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {
-    // std::cout << "GradeTooHighException Destructor called" << std::endl;
+
 }
 
 const char* Bureaucrat::GradeTooHighException::what()const  throw()
@@ -98,12 +97,11 @@ const char* Bureaucrat::GradeTooHighException::what()const  throw()
 Bureaucrat::GradeTooLowException::GradeTooLowException() : message("\033[0;31mERROR! Grade Too Low Exception\033[0m")
 {
     
-    // std::cout << "\033[0;31mGradeTooLowException Deafult constructor called" << std::endl;
 }
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException()  throw()
 {
-    // std::cout << "\033[0;31mGradeTooLowException Destructor called" << std::endl;
+
 }
 
 const char* Bureaucrat::GradeTooLowException::what()const  throw()

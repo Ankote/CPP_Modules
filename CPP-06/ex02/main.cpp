@@ -6,20 +6,20 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:21:05 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/07 14:34:50 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:27:12 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "generate.hpp"
 
-void pointValidTsey()
+void pointValidTest()
 {
     Base *b = generate();
     identify(b);
     delete b;
 }
 
-void pointFalsTsey()
+void pointInvalidTest()
 {
     Base *b = new Base();
     identify(b);
@@ -45,9 +45,5 @@ void refFalsTsey()
 
 int main()
 {
-    // pointValidTsey();
-    // pointFalsTsey();
-    // refValidTsey();
-    refFalsTsey() ;
-    return 0;
+    refFalsTsey();
 }

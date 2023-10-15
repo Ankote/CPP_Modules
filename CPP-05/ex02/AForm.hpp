@@ -13,6 +13,8 @@
 #pragma once
 
 #include "Bureaucrat.hpp"
+#include <stdlib.h>
+#include <ctime>
 class Bureaucrat;
 
 class AForm

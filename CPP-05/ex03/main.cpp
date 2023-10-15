@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:05:30 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/10 17:56:05 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/11 09:42:00 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void addTest()
         
         Intern someRandomIntern;
         AForm *rrf;
-        rrf = someRandomIntern.makeForm("Presidential Pardon", "jack");
+        rrf = someRandomIntern.makeForm("Presidenti1al Pardon", "jack");
         std::cout << rrf->getName() << "." << std::endl;
         std::cout << rrf->getTarget() << std::endl;;
         delete rrf;
@@ -70,7 +70,7 @@ void addTest()
 
 int main()
 {
-    // addTest();
-    ivalidTest();
+    addTest();
+    // ivalidTest();
 //    validTest();
 }

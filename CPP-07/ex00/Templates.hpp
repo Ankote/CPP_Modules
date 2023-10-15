@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:30:09 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/07 13:47:34 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/12 14:21:38 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ void swap(Type &arg1, Type &arg2)
 
 
 template <typename Type> 
-
 Type min(Type &arg1, Type &arg2)
 {
     return (arg1 < arg2) ? arg1 : arg2;
 };
 
 template <typename Type> 
-
 Type max(Type &arg1, Type &arg2)
 {
         return (arg1 > arg2) ? arg1 : arg2;
