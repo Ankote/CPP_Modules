@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:54:35 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/15 21:32:08 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/16 11:48:35 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,43 +50,3 @@ class MutantStack :public std::stack<T, Container>
             return this->c.end();
         }
 };
-
-
-// template <typename T>
-// class MutantStack :public std::stack<T> 
-// {
-//     private :
-    
-//     public :
-//         MutantStack(){};
-
-//         ~MutantStack(){};
-        
-//         MutantStack(const MutantStack &o)
-//         {
-//             *this = o;
-//         }
-
-//         MutantStack &operator=(const MutantStack &o)
-//         {
-//             if (this != &o)
-//                 this->c = o.c;
-//             return (*this);
-//         }
-        
-//         typedef typename std::deque<T>::iterator    iterator;
-        
-//         iterator mybegin()
-//         {
-//             return this->c.begin();
-//         }
-        
-//         iterator end()
-//         {
-//             return this->c.end();
-//         }
-// };
-
-// //I workd with deque because he like stack
-
-// //stack 

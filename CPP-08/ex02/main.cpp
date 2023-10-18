@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:54:03 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/15 22:44:49 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/16 18:34:40 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void  testVector() {
     std::stack<int, std::vector<int> > s(mstack);
 }
 
-
+/***************************Test Objects****************************************/
 class Myclass
 {
     private :
@@ -151,9 +151,13 @@ void testObject()
     }
     std::cout << std::endl;
 }
+/***************************************************************************************/
+
 int main()
 {
+    
     test01();
+    std::stack<int,std::list<int> > a;
 //     std::cout << "n\n____________________Subject Test_________________________\n\n";
 //     subTest();
 
