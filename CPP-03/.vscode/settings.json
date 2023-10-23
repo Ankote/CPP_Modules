@@ -1,7 +1,5 @@
 {
     "files.associations": {
-        "vector": "cpp",
-        "stack": "cpp",
         "__bit_reference": "cpp",
         "__config": "cpp",
         "__debug": "cpp",
@@ -34,7 +32,6 @@
         "ctime": "cpp",
         "cwchar": "cpp",
         "cwctype": "cpp",
-        "deque": "cpp",
         "exception": "cpp",
         "functional": "cpp",
         "initializer_list": "cpp",
@@ -44,7 +41,6 @@
         "istream": "cpp",
         "iterator": "cpp",
         "limits": "cpp",
-        "list": "cpp",
         "locale": "cpp",
         "memory": "cpp",
         "mutex": "cpp",
@@ -62,6 +58,7 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "unordered_map": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "vector": "cpp"
     }
 }

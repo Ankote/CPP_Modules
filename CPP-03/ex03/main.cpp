@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 20:08:26 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 18:46:09 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/23 15:46:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void test1()
 {
     std::cout << std::endl << "\e[0;33m <<<<<<<<<<<<<<Test  01>>>>>>>>>>>>>>>>>\e[0m" << std::endl;
     {
-        DiamondTrap zizo("ZIZO");
-        DiamondTrap hero("Hero");
+        DiamondTrap zizo;
+        DiamondTrap hero;
         zizo.attack(hero.getName());
         zizo.highFivesGuys();
         
@@ -37,8 +37,8 @@ void test2()
 {
     std::cout << std::endl << "\e[0;33m <<<<<<<<<<<<<<Test  01>>>>>>>>>>>>>>>>>\e[0m" << std::endl;
     {
-        DiamondTrap zizo("ZIZO");
-        DiamondTrap hero("Hero");
+        DiamondTrap zizo;
+        DiamondTrap hero;
         zizo.ClapTrap::attack(hero.getName());
         zizo.highFivesGuys();
         

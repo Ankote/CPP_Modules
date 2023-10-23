@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 09:44:37 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/21 19:00:01 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/23 15:53:29 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 DiamondTrap::DiamondTrap() 
 {
     this->_Name = "Boot";
-    this->_HitPoint     = 100;
-    this->_AttackDamage = 30;
+    this->_HitPoint     = ScavTrap::_HitPoint;
+    this->_AttackDamage = ScavTrap::_AttackDamage;
     this->_EnergyPoint  = 100;
+
+    std::cout << "hit : " << _HitPoint << " Atta : " << _AttackDamage << std::endl;
     std::cout << "A new DiamondTrap is born!"<< std::endl;
 }
         

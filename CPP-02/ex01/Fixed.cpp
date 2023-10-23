@@ -6,7 +6,7 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:19:45 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/11 19:45:07 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/22 19:51:06 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
     Fixed::Fixed()
     {
         std::cout << "Default contructor called" << std::endl;
+        this->_fixed_point_value = 0;
     }
 
     Fixed::Fixed (const Fixed &other)

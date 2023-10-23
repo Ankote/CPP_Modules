@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 20:02:09 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/19 10:19:26 by aankote          ###   ########.fr       */
+/*   Created: 2023/10/23 15:01:55 by aankote           #+#    #+#             */
+/*   Updated: 2023/10/23 20:35:29 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#pragma once
 
-int main(int argc, char **argv)
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+
+
+class PmergeMe
 {
-    try
-    {
-        if (argc == 2)
-            parceFile(argv[1]);
-        else
-            std::cout << "Can't open file" << std::endl;
-    }
-    catch(const char *s)
-    {
-        std::cerr << s << '\n';
-    }
-}
+
+    public: 
+        std::vector<int> array1;
+        std::vector<int> array2;
+        PmergeMe();
+        void insetionSort(std::vector<int> &arr);
+        void PmergeMeFun(std::vector<int> &arr);
+        void printNumbers(std::vector<int> &arr);
+};

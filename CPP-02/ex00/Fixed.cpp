@@ -6,16 +6,16 @@
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:15:39 by aankote           #+#    #+#             */
-/*   Updated: 2023/09/07 17:41:38 by aankote          ###   ########.fr       */
+/*   Updated: 2023/10/22 20:01:06 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) 
 {
     std::cout << "Default constructor called" << std::endl;
-    _fixed_point_value = 0;
+    _fixed_point_value = 0
 }
 
 Fixed::Fixed(const Fixed &src)

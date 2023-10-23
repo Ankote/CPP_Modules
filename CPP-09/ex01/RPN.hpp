@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aankote <aankote@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 20:02:09 by aankote           #+#    #+#             */
-/*   Updated: 2023/10/19 10:19:26 by aankote          ###   ########.fr       */
+/*   Created: 2023/10/19 13:44:32 by aankote           #+#    #+#             */
+/*   Updated: 2023/10/19 15:21:15 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#pragma once
+#include <iostream>
+#include <stack>
+#include <string>
 
-int main(int argc, char **argv)
-{
-    try
-    {
-        if (argc == 2)
-            parceFile(argv[1]);
-        else
-            std::cout << "Can't open file" << std::endl;
-    }
-    catch(const char *s)
-    {
-        std::cerr << s << '\n';
-    }
-}
+bool isOperator(char c);
+std::string splitArg(std::string line);
+bool isOperator(char c);
+std::string  splitArg(std::string &line);
+void RPN(std::string &line);
+void generateStack(std::stack<double> &stack, char oprt);
+double doOperation(double &a, char &oprt, double &b);
